@@ -1,0 +1,68 @@
+<div class="login-container">
+  <div class="login-form">
+
+    <form class="login" autocomplete="off" [formGroup]="formLogin">
+      <h2 class="login__header">Inicia <strong> sesión </strong></h2>
+      <div class="login__body">
+        <!-- USERNAME -->
+        <mat-form-field class="login__input" appearance="fill">
+          <mat-label> <mat-icon>money</mat-icon> Email </mat-label>
+          <input
+            matInput
+            appNumeric
+            type="tel"
+            minlength="8"
+            maxlength="12"
+            formControlName="username"
+          />
+          <!-- <mat-error *ngIf="usernameField.errors?.required"
+            >Este campo es obligatorio</mat-error
+          > -->
+        </mat-form-field>
+        <!-- PASSWORD -->
+        <mat-form-field class="login__input" appearance="fill">
+          <mat-label> <mat-icon>no_encryption</mat-icon> Contraseña </mat-label>
+          <input
+            matInput
+            minlength="6"
+            maxlength="25"
+            formControlName="password"
+            [type]="hidePassword ? 'password' : 'text'"
+          />
+          <button
+            type="button"
+            mat-icon-button
+            matSuffix
+            class="button-password"
+            (click)="hidePassword = !hidePassword"
+          >
+            <mat-icon>{{
+              hidePassword ? "visibility_off" : "visibility"
+            }}</mat-icon>
+          </button>
+
+          <!-- <mat-error *ngIf="passwordField.errors?.required"
+            >Este campo es obligatorio</mat-error -->
+        </mat-form-field>
+      </div>
+      <div class="login__footer" >
+
+        <a class="is-centered__register">Registrarse</a>
+        <button
+          mat-raised-button
+          color="primary"
+          class="login__button button--large"
+          type="submit"
+          routerLink="/"
+          (click)="login()"
+        >
+          Ingreso
+          <!-- <mat-icon> touch_app </mat-icon> -->
+        </button>
+      </div>
+    </form>
+
+
+  </div>
+</div>
+
