@@ -1,31 +1,23 @@
 <div class="login-container">
   <div class="login-form">
 
-    <form class="login" autocomplete="off" [formGroup]="formLogin">
+    <form class="login"  [formGroup]="formLogin">
       <h2 class="login__header">Inicia <strong> sesión </strong></h2>
       <div class="login__body">
-        <!-- USERNAME -->
-        <mat-form-field class="login__input" appearance="fill">
+        <!-- EMAIL -->
+        <mat-form-field class="login__input" appearance="fill" >
           <mat-label> <mat-icon>money</mat-icon> Email </mat-label>
           <input
             matInput
-            appNumeric
-            type="tel"
-            minlength="8"
-            maxlength="12"
-            formControlName="username"
+            type="email"
+            formControlName="email"
           />
-          <!-- <mat-error *ngIf="usernameField.errors?.required"
-            >Este campo es obligatorio</mat-error
-          > -->
         </mat-form-field>
         <!-- PASSWORD -->
         <mat-form-field class="login__input" appearance="fill">
           <mat-label> <mat-icon>no_encryption</mat-icon> Contraseña </mat-label>
           <input
             matInput
-            minlength="6"
-            maxlength="25"
             formControlName="password"
             [type]="hidePassword ? 'password' : 'text'"
           />
@@ -49,12 +41,13 @@
 
         <a class="is-centered__register">Registrarse</a>
         <button
+          [disabled]="formLogin.invalid"
           mat-raised-button
           color="primary"
           class="login__button button--large"
           type="submit"
           routerLink="/"
-          (click)="login()"
+          (click)="login(formLogin.value)"
         >
           Ingreso
           <!-- <mat-icon> touch_app </mat-icon> -->

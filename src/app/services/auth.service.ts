@@ -15,11 +15,16 @@ export class AuthService {
   ) {}
 
   login(email: string, password: string) {
-    const url_login = `${URL_BASE}/login`;
+
+    console.log(email, password)
+    const url_login = `${URL_BASE}/login/`;
 
     return this._httpClient.post<Login>(
       url_login,
-      { email, password }
+      {
+        "email": "jaquelineramosvargas@gmail.com",
+        "password": "12345678"
+    }
     );
   }
 

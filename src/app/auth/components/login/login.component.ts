@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -8,8 +9,9 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  formLogin!: FormGroup
-  constructor(private _auth: AuthService) { }
+  formLogin!: FormGroup;
+  hidePassword = true;
+  constructor(private _auth: AuthService, private _router:Router) { }
 
   ngOnInit(): void {
 
@@ -29,12 +31,12 @@ export class LoginComponent implements OnInit {
 
   }
 
-  login(){
-    const {email, password} = this.formLogin.value;
+  login(formValue: any){
+    const {email, password} = formValue;
 
     this._auth.login(email, password).subscribe({
       next: rpta => {
-        console.log(rpta, 'kmdfkm ')
+        this._router.navigate(['/dashboard'])
       }
     })
   }

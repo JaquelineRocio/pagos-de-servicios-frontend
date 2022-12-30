@@ -1,0 +1,111 @@
+.login-container {
+
+  height: 100vh;
+  width: 100vw;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.login-form {
+  width: 400px;
+  display: flex;
+  padding: 2em;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 2em;
+
+}
+
+
+
+.login {
+  width: 100%;
+
+  &__header {
+    color: #41d4e4;
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: 400;
+    margin: 10px;
+
+    strong {
+      font-weight: 500;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+  }
+
+  &__button {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    font-size: 1.6em;
+    padding: 0.5rem;
+    background-color: #219d84;
+    color: white;
+    font-weight: 600;
+    border: 2px solid white;
+    letter-spacing: 0.5px;
+  }
+
+
+  p {
+    color: #41d4e4;
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-align: left;
+  }
+}
+
+.button-password {
+  color: black;
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+
+.is-centered {
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+  &__register {
+    color: #41d4e4;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+}
+
+
+
+
+button.ng-tns-c100-1 {
+  border: none;
+}
+
+.mat-input-element {
+  color: black ;
+  font-size: 1.2em;
+}
+
+
