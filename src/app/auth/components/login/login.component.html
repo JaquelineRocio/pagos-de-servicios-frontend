@@ -42,9 +42,7 @@
         <a class="is-centered__register">Registrarse</a>
         <button
           [disabled]="formLogin.invalid"
-          mat-raised-button
-          color="primary"
-          class="login__button button--large"
+          class="btn btn-primary"
           type="submit"
           routerLink="/"
           (click)="login(formLogin.value)"

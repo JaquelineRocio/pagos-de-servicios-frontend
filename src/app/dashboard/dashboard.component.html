@@ -1,1 +1,26 @@
-<p>dashboard works!</p>
+<mat-toolbar>
+  <ol>
+      <li
+      [routerLinkActiveOptions]="{ exact: true }"
+      routerLink="/dashboard"
+      routerLinkActive="active-link">
+   Inicio
+  </li>
+  <li
+  [routerLinkActiveOptions]="{ exact: true }"
+  routerLink="add-pago"
+  routerLinkActive="active-link">
+   Añadir nuevo pago
+  </li>
+  <li
+  [routerLinkActiveOptions]="{ exact: true }"
+  routerLink="servicios"
+  routerLinkActive="active-link">
+   Servicios
+  </li>
+  </ol>
+
+
+</mat-toolbar>
+
+<router-outlet></router-outlet>
