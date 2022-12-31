@@ -29,13 +29,13 @@ export class AuthService {
   }
 
 
-  register(user: any) {
-    const url_register = `${URL_BASE}/auth/register`;
-    const params = new HttpParams().set(
-      'g',
-      '1ddd7536-e95e-479e-9571-d820dc583d89'
-    );
-    return this._httpClient.post(url_register, user, { params: params });
+  register(email: string, username: string, password: string) {
+    console.log(email, username, password)
+    const url_register = `${URL_BASE}/signup/`;
+    const body = {
+      email, username, password
+    }
+    return this._httpClient.post(url_register, body);
   }
 
 
