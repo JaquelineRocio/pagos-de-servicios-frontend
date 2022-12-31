@@ -1,20 +1,28 @@
-<div class="login-container">
-  <div class="login-form">
+<div class="signup-container">
+  <div class="signup-form">
 
-    <form class="login"  [formGroup]="formLogin">
-      <h2 class="login__header">Inicia <strong> sesión </strong></h2>
-      <div class="login__body">
+    <form class="signup"  [formGroup]="formSignup">
+      <h2 class="signup__header"><strong> Signup</strong></h2>
+      <div class="signup__body">
         <!-- EMAIL -->
-        <mat-form-field class="login__input" appearance="fill" >
-          <mat-label> <mat-icon>money</mat-icon> Email </mat-label>
+        <mat-form-field class="signup__input" appearance="fill" >
+          <mat-label> <mat-icon>mail</mat-icon> Email </mat-label>
           <input
             matInput
             type="email"
             formControlName="email"
           />
         </mat-form-field>
+        <!-- USERNAME -->
+        <mat-form-field class="signup__input" appearance="fill" >
+          <mat-label> <mat-icon>person</mat-icon> Username </mat-label>
+          <input
+            matInput
+            formControlName="username"
+          />
+        </mat-form-field>
         <!-- PASSWORD -->
-        <mat-form-field class="login__input" appearance="fill">
+        <mat-form-field class="signup__input" appearance="fill">
           <mat-label> <mat-icon>no_encryption</mat-icon> Contraseña </mat-label>
           <input
             matInput
@@ -35,23 +43,22 @@
 
         </mat-form-field>
       </div>
-      <div class="login__footer" >
+      <div class="signup__footer" >
 
 
         <button
-          [disabled]="formLogin.invalid"
+          [disabled]="formSignup.invalid"
           class="btn btn-primary"
           type="submit"
           routerLink="/"
-          (click)="login(formLogin.value)"
+
         >
           Ingreso
         </button>
-        <a class="is-centered__register" routerLink="signup">Registrarse</a>
+        <a class="is-centered__register" routerLink="/">Regresar al login</a>
       </div>
     </form>
 
 
   </div>
 </div>
-
