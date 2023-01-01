@@ -36,6 +36,11 @@ export class LoginComponent implements OnInit {
 
     this._auth.login(email, password).subscribe({
       next: rpta => {
+        localStorage.setItem('message', rpta['message']);
+        localStorage.setItem('email', rpta['data']['email']);
+        localStorage.setItem('email', rpta['data']['username']);
+        localStorage.setItem('isAdmin', String(rpta['data']['isAdmin']))
+        localStorage.setItem('access_token', rpta['tokens']['access'])
         this._router.navigate(['/dashboard'])
       }
     })
