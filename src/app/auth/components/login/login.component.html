@@ -12,6 +12,7 @@
             type="email"
             formControlName="email"
           />
+          <mat-error>La email es requerida</mat-error>
         </mat-form-field>
         <!-- PASSWORD -->
         <mat-form-field class="login__input" appearance="fill">
@@ -21,6 +22,7 @@
             formControlName="password"
             [type]="hidePassword ? 'password' : 'text'"
           />
+          <mat-error>La contraseña es requerida</mat-error>
           <button
             type="button"
             mat-icon-button
@@ -42,8 +44,9 @@
           [disabled]="formLogin.invalid"
           class="btn btn-primary"
           type="submit"
-          routerLink="/"
           (click)="login(formLogin.value)"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
         >
           Ingreso
         </button>
@@ -51,7 +54,7 @@
       </div>
     </form>
 
-
+<app-modal-response [titulo]="response.title" [message]="response.message" *ngIf="response.title === 'Error'"></app-modal-response>
   </div>
 </div>
 

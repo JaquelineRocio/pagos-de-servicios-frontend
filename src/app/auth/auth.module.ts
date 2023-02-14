@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import { SignupComponent } from './components/signup/signup.component'
+import { SharedModule } from '../shared/shared.module';
 @NgModule({
   declarations: [
     AuthComponent,
@@ -21,7 +22,8 @@ import { SignupComponent } from './components/signup/signup.component'
     FormsModule,
     MatFormFieldModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
+    SharedModule
   ]
 })
 export class AuthModule { }

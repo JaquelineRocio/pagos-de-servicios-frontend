@@ -6,7 +6,9 @@ const routes: Routes = [{ path: '', loadChildren: () => import('./auth/auth.modu
 
 { path: 'dashboard',
 canActivate: [ValidateSessionGuard],
-loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) }];
+loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) },
+
+{ path: 'shared', loadChildren: () => import('./shared/shared.module').then(m => m.SharedModule) }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

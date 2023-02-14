@@ -2,14 +2,14 @@
 export interface Login
 {
   message: string,
-  data: {
+  body: {
       id: number,
       email: string,
       username: string,
       isAdmin: boolean
   },
   tokens: {
-      access: string,
-      refresh: string
+      access_token: string,
+      refresh_token: string
   }
 }

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://pagosapi-production.up.railway.app/api/v2'
+  apiUrl: 'http://localhost:8000/api/v2'
 };
 
 /*

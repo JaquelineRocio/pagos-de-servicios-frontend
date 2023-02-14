@@ -12,7 +12,11 @@
             type="email"
             formControlName="email"
           />
+          <mat-error>
+          Ingrese un email válido
+        </mat-error>
         </mat-form-field>
+
         <!-- USERNAME -->
         <mat-form-field class="signup__input" appearance="fill" >
           <mat-label> <mat-icon>person</mat-icon> Username </mat-label>
@@ -20,6 +24,9 @@
             matInput
             formControlName="username"
           />
+          <mat-error>
+            Username es requerido
+          </mat-error>
         </mat-form-field>
         <!-- PASSWORD -->
         <mat-form-field class="signup__input" appearance="fill">
@@ -39,8 +46,11 @@
             <mat-icon>{{
               hidePassword ? "visibility_off" : "visibility"
             }}</mat-icon>
-          </button>
 
+          </button>
+            <mat-error>
+              La contraseña debe contener 8 carácteres como mínimo
+            </mat-error>
         </mat-form-field>
       </div>
       <div class="signup__footer" >
@@ -50,12 +60,31 @@
           [disabled]="formSignup.invalid"
           class="btn btn-primary"
           type="submit"
-          routerLink="/"
           (click)="signup(formSignup.value)"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
         >
           Ingreso
         </button>
         <a class="is-centered__register" routerLink="/">Regresar al login</a>
+
+<!-- Modal -->
+<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div [class]="response.title === 'Error'?'modal-header p-3 mb-2 bg-danger text-white':'modal-header p-3 mb-2 bg-success text-white'">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">{{response.title}}</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <h2 class="modal-body">
+        {{response.message}}
+      </h2>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" routerLink="/">Ir al login</button>
+      </div>
+    </div>
+  </div>
+</div>
       </div>
     </form>
 
