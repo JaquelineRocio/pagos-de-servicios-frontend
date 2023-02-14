@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { HttpClient, HttpParams} from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
 import {  Login } from '../../models/auth.model';
 
 const URL_BASE = `${environment.apiUrl}`;
@@ -15,10 +15,7 @@ export class AuthService {
   ) {}
 
   login(email: string, password: string) {
-
-    console.log(email, password)
-    const url_login = `http://127.0.0.1:8000/api/v2/login/`;
-
+    const url_login = `${URL_BASE}/login/`;
     return this._httpClient.post<Login>(
       url_login,
       {
@@ -37,7 +34,13 @@ export class AuthService {
     }
     return this._httpClient.post<any>(url_register, body);
   }
+  refreshToken(token: string) {
 
+    return this._httpClient.post(`http://localhost:8000/api/v1/refresh_jwt/` ,
+    {
+      refreshToken: token
+    });
+  }
 
 }
 
