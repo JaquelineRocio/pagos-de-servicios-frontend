@@ -39,7 +39,7 @@ export class TokenSessionInterceptor implements HttpInterceptor {
     )
     request = currentRequest;
     return next.handle(request).pipe(catchError(error => {
-      if (error instanceof HttpErrorResponse && !request.url.includes('auth/signin') && error.status === 401) {
+      if (error instanceof HttpErrorResponse && !request.url.includes('/') && error.status === 401) {
         return this.handle401Error(request, next);
       }
 

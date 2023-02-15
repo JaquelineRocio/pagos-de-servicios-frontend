@@ -2,14 +2,19 @@
   <h2>Añadir nuevo pago</h2>
   <div class="card">
     <div class="card-body" [formGroup]="formAddPago">
-      <input type="text" placeholder="Fecha de vencimiento" class="form-control m-3" type = 'date'>
-      <select class="form-select  m-3" aria-label="Default select example">
+      <input
+      type="text"
+      placeholder="Fecha de vencimiento"
+      class="form-control m-3"
+      type = 'date'
+      formControlName="expiration_date">
+      <select class="form-select  m-3" aria-label="Default select example" formControlName="service">
         <option selected>Servicio</option>
         <option value="1">HBO</option>
         <option value="2">Netflix</option>
         <option value="3">Three</option>
       </select>
-      <input type="number" placeholder="Monto" class="form-control  m-3">
+      <input type="number" placeholder="Monto" class="form-control  m-3" formControlName="amount">
       <button class="btn btn-primary" (click)="save(formAddPago.value)">Añadir</button>
     </div>
   </div>

@@ -7,7 +7,7 @@ import { checkToken } from '../interceptors/token-session.interceptor';
 export interface Pago{
   user: string;
   expiration_date: string;
-  service: string;
+  service: number;
   amount: number;
   payment_date?: number;
 }
@@ -23,9 +23,19 @@ export class PagosService {
 
 
   createPago(body: Pago){
-    body.user = 'jaqueline@gmail.com';
-    body.service = '1';
-    body.amount = 8;
+    body.user = 'rocio123@gmail.com';
+     body.service = 1;
+
+     console.log(typeof(body.amount))
+    // body.amount = 8;
+    // body["expiration_date"]= "2023-02-15"
+    console.log(body)
+    // // body = {
+    // //   "user": "string",
+    // //   "service": 1,
+    // //   "amount": 0,
+    // //   "expiration_date": "2023-02-15"
+    // // }
     const api_key: string= localStorage.getItem('access_token')!;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',

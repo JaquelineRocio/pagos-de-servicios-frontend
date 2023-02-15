@@ -17,7 +17,7 @@ export class AddPagoComponent implements OnInit{
   ngOnInit(){
 
     this.formAddPago =  new FormGroup({
-      expired_date: new FormControl({
+      expiration_date: new FormControl({
         validators:[Validators.required]
       }),
       service: new FormControl({
